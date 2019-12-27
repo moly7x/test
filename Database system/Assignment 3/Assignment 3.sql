@@ -44,9 +44,9 @@ FROM
     Trainee
 WHERE
     (ET_IQ + ET_Gmath) >= 20 
-		OR ET_IQ >= 8
-        OR ET_Gmath >= 8
-        OR ET_English >= 18;
+		AND ET_IQ >= 8
+        AND ET_Gmath >= 8
+        AND ET_English >= 18;
 
 
 -- Question 5: delete information of trainee who has TraineeID = 3
