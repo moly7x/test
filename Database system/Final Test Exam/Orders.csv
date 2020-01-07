@@ -36,6 +36,3 @@ oder_id,customer_id,car_id,amount,saleprice,order_date,DeliveryDate,DeliveryAddr
 35,9,3,1,3636.28,14/05/2019,13/06/2019,810 Bowman Court,1,egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est
 36,12,20,1,3792.76,03/05/2019,04/06/2019,5489 Shelley Parkway,2,pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque arcu libero
 37,16,10,1,2906.45,01/05/2019,02/06/2019,21 Vermont Alley,0,pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in
-,,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
