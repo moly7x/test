@@ -22,16 +22,16 @@ public class ContactDAOImp extends BaseDAO implements ContactDAO {
 	 */
 	@Override
 	public void save(Contact c) {
-		String sql="INSERT INTO contact (userId, name, phone, email, address, remark) VALUES(:userId, :name, :phone, :email, :address, :remark)";
-		Map m=new HashMap();
+		String sql = "INSERT INTO contact (userId, name, phone, email, address, remark) VALUES(:userId, :name, :phone, :email, :address, :remark)";
+		Map m = new HashMap();
 		m.put("userId", c.getUserID());
 		m.put("name", c.getName());
 		m.put("phone", c.getPhone());
 		m.put("email", c.getEmail());
 		m.put("address", c.getAddress());
 		m.put("remark", c.getRemark());
-		SqlParameterSource ps=new MapSqlParameterSource(m);
-		KeyHolder kh=new GeneratedKeyHolder();
+		SqlParameterSource ps = new MapSqlParameterSource(m);
+		KeyHolder kh = new GeneratedKeyHolder();
 		getNamedParameterJdbcTemplate().update(sql, ps, kh);
 		c.setContactId(kh.getKey().intValue());
 	}
@@ -41,8 +41,8 @@ public class ContactDAOImp extends BaseDAO implements ContactDAO {
 	 */
 	@Override
 	public void update(Contact c) {
-		String sql="UPDATE INTO contact SET userId=:userId, name=:name, phone=:phone, email=:email, address=:address, remark=:remark WHERE contactId=:contactId";
-		Map m=new HashMap();
+		String sql = "UPDATE INTO contact SET userId=:userId, name=:name, phone=:phone, email=:email, address=:address, remark=:remark WHERE contactId=:contactId";
+		Map m = new HashMap();
 		m.put("contactId", c.getContactId());
 		m.put("name", c.getName());
 		m.put("phone", c.getPhone());
@@ -65,7 +65,7 @@ public class ContactDAOImp extends BaseDAO implements ContactDAO {
 	 */
 	@Override
 	public void delete(Integer contactID) {
-		String sql="DELETE FROM contact WHERE contactId=?";
+		String sql = "DELETE FROM contact WHERE contactId=?";
 		getJdbcTemplate().update(sql, contactID);
 	}
 
@@ -74,9 +74,9 @@ public class ContactDAOImp extends BaseDAO implements ContactDAO {
 	 */
 	@Override
 	public Contact findById(Integer contactID) {
-		String sql="SELECT contactId, userId, name, phone, email, address, remark FROM contact WHERE contactId=?";
+		String sql = "SELECT contactId, userId, name, phone, email, address, remark FROM contact WHERE contactId=?";
 		return getJdbcTemplate().queryForObject(sql, new ContactRowMapper(), contactID);
-		
+
 	}
 
 	/*
@@ -84,7 +84,7 @@ public class ContactDAOImp extends BaseDAO implements ContactDAO {
 	 */
 	@Override
 	public List<Contact> findAll() {
-		String sql="SELECT contactId, userId, name, phone, email, address, remark FROM contact";
+		String sql = "SELECT contactId, userId, name, phone, email, address, remark FROM contact";
 		return getJdbcTemplate().query(sql, new ContactRowMapper());
 	}
 
@@ -94,7 +94,8 @@ public class ContactDAOImp extends BaseDAO implements ContactDAO {
 	 */
 	@Override
 	public List<Contact> findByProperty(String propName, Object propValue) {
-		String sql="SELECT contactId, userId, name, phone, email, address, remark FROM contact WHERE " +propName+"=?";
+		String sql = "SELECT contactId, userId, name, phone, email, address, remark FROM contact WHERE " + propName
+				+ "=?";
 		return getJdbcTemplate().query(sql, new ContactRowMapper(), propValue);
 	}
 
