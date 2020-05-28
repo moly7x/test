@@ -48,6 +48,7 @@ public class ContactApplicationDispathcerSevletInitializer extends AbstractAnnot
 	public void onStartup(ServletContext servletContext) throws ServletException {
 		// TODO Auto-generated method stub
 		super.onStartup(servletContext);
+		// configure global tank here if request
 	}
 
 }

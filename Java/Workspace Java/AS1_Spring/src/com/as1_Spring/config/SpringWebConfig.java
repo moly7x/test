@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @SuppressWarnings("deprecation")
 @Configuration
-@ComponentScan(basePackages = "com.as1_Spring")
+@ComponentScan(basePackages = {"com.as1_Spring"})
 @EnableWebMvc
 public class SpringWebConfig extends WebMvcConfigurerAdapter {
 	
@@ -26,7 +26,7 @@ public class SpringWebConfig extends WebMvcConfigurerAdapter {
 	public ViewResolver viewResolver() {
 		InternalResourceViewResolver vr = new InternalResourceViewResolver();
 		vr.setViewClass(JstlView.class);
-		vr.setPrefix("/WEB-INF/view");
+		vr.setPrefix("/WEB-INF/view/");
 		vr.setSuffix(".jsp");
 		return vr;
 	}
